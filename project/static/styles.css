@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 30px 0;
+    color: white;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+main {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.mood-selector {
+    margin-bottom: 40px;
+}
+
+.mood-selector h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.emoji-mood {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.mood-btn {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.mood-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    background: #667eea;
+    color: white;
+}
+
+.text-mood {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#mood-input {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    width: 300px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#mood-input:focus {
+    border-color: #667eea;
+}
+
+#submit-mood {
+    padding: 15px 25px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#submit-mood:hover {
+    background: #5a67d8;
+}
+
+.recommendations h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#song-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.song-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.song-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.song-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.artist-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.song-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 3px;
+    color: #333;
+    line-height: 1.3;
+}
+
+.song-artist {
+    color: #667eea;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.song-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.song-genre, .song-nationality, .song-mood {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.song-genre {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.song-nationality {
+    background: #e8f5e9;
+    color: #388e3c;
+}
+
+.song-mood {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.placeholder {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    grid-column: 1 / -1;
+    padding: 50px;
+    font-size: 1.1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    #song-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .text-mood {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #mood-input {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    #submit-mood {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .emoji-mood {
+        gap: 10px;
+    }
+    
+    .mood-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 1.7rem;
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Music Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 MoodTunes</h1>
+            <p>Discover music that matches your mood</p>
+        </header>
+        
+        <main>
+            <section class="mood-selector">
+                <h2>How are you feeling today?</h2>
+                <div class="emoji-mood">
+                    <button class="mood-btn" data-mood="happy">😊 Happy</button>
+                    <button class="mood-btn" data-mood="sad">😢 Sad</button>
+                    <button class="mood-btn" data-mood="energetic">⚡ Energetic</button>
+                    <button class="mood-btn" data-mood="calm">😌 Calm</button>
+                    <button class="mood-btn" data-mood="romantic">💕 Romantic</button>
+                </div>
+                
+                <div class="text-mood">
+                    <input type="text" id="mood-input" placeholder="Or describe your mood...">
+                    <button id="submit-mood">Get Recommendations</button>
+                </div>
+            </section>
+            
+            <section class="recommendations">
+                <h2>Your Recommendations</h2>
+                <div id="song-list">
+                    <!-- Songs will be displayed here -->
+                    <p class="placeholder">Select a mood to get recommendations</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
